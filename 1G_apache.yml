@@ -1,6 +1,6 @@
 ---
 - name: install apache only if enough memory
-  hosts: all 
+  hosts: webserver
   tasks:
     - name: install apache if memory >= 1024
       dnf: 
