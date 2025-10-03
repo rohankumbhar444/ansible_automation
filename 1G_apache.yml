@@ -1,0 +1,9 @@
+---
+- name: install apache only if enough memory
+  hosts: all 
+  tasks:
+    - name: install apache if memory >= 1024
+      dnf: 
+        name: httpd
+        state: present
+      when: ansible_memfree_mb >= 1024
